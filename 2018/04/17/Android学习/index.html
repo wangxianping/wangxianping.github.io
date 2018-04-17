@@ -93,16 +93,48 @@
 
 
 
-<meta name="description" content="欢迎来到我的博客，博客现在还在开发当中，请过段时间再来查看，你会发现大不一样！">
+<meta name="description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/2017/03/16/hello-world/index.html">
+<meta property="og:title" content="Android学习">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/Android学习/index.html">
 <meta property="og:site_name" content="王贤平的个人博客">
-<meta property="og:description" content="欢迎来到我的博客，博客现在还在开发当中，请过段时间再来查看，你会发现大不一样！">
-<meta property="og:updated_time" content="2017-09-13T03:59:37.450Z">
+<meta property="og:description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列化">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/Android学习/p1/png">
+<meta property="og:updated_time" content="2018-04-17T09:19:41.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="欢迎来到我的博客，博客现在还在开发当中，请过段时间再来查看，你会发现大不一样！">
+<meta name="twitter:title" content="Android学习">
+<meta name="twitter:description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列化">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/17/Android学习/p1/png">
 
 
 
@@ -130,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/16/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/17/Android学习/"/>
 
 
 
 
 
-  <title>我的博客 | 王贤平的个人博客</title>
+  <title>Android学习 | 王贤平的个人博客</title>
   
 
 
@@ -265,7 +297,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/Android学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王贤平">
@@ -282,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的博客</h1>
+          <h1 class="post-title" itemprop="name headline">Android学习</h1>
         
 
         <div class="post-meta">
@@ -294,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T21:17:30+08:00">
-                2017-03-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T17:19:33+08:00">
+                2018-04-17
               </time>
             
 
@@ -329,7 +361,19 @@
       
 
       
-        <p>欢迎来到我的博客，博客现在还在开发当中，请过段时间再来查看，你会发现大不一样！</p>
+        <h2 id="IPC机制（进程间通信）"><a href="#IPC机制（进程间通信）" class="headerlink" title="IPC机制（进程间通信）"></a>IPC机制（进程间通信）</h2><ol>
+<li><p>开启多进程会给我们带来哪些问题？</p>
+<pre><code>（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+</code></pre></li>
+<li><p>如何开启多进程模式？</p>
+<pre><code>在AndroidMennifest中指定android：process属性就可。
+</code></pre></li>
+<li><p>序列化<br>在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列化。<br>序列化的方式有两种：<br>（1）实现Serializable接口<br>（2）实现Parcelable接口<br>其中Serializable是Java所提供的一个序列化接口，它是一个空的接口，不需要你做任何操作。Parcelable是Android提供的序列化的接口<br><img src="/2018/04/17/Android学习/p1/png" alt="Parcelable的方法说明"></p>
+</li>
+</ol>
 
       
     </div>
@@ -406,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
@@ -452,6 +505,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC机制（进程间通信）"><span class="nav-number">1.</span> <span class="nav-text">IPC机制（进程间通信）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -468,7 +537,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

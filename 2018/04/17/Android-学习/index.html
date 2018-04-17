@@ -93,15 +93,51 @@
 
 
 
-<meta name="description" content="一个很帅的程序员">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王贤平的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+<meta name="description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化
+在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android学习">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/Android-学习/index.html">
 <meta property="og:site_name" content="王贤平的个人博客">
-<meta property="og:description" content="一个很帅的程序员">
+<meta property="og:description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化
+在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/Android-学习/p1.png">
+<meta property="og:updated_time" content="2018-04-17T09:40:23.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王贤平的个人博客">
-<meta name="twitter:description" content="一个很帅的程序员">
+<meta name="twitter:title" content="Android学习">
+<meta name="twitter:description" content="IPC机制（进程间通信）
+开启多进程会给我们带来哪些问题？
+（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+
+如何开启多进程模式？
+在AndroidMennifest中指定android：process属性就可。
+
+序列化
+在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/17/Android-学习/p1.png">
 
 
 
@@ -129,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/03/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/17/Android-学习/"/>
 
 
 
 
 
-  <title>归档 | 王贤平的个人博客</title>
+  <title>Android学习 | 王贤平的个人博客</title>
   
 
 
@@ -160,7 +196,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,66 +290,146 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 1 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/Android-学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王贤平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王贤平的个人博客">
     </span>
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        
+          <h1 class="post-title" itemprop="name headline">Android学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T17:40:14+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h2 id="IPC机制（进程间通信）"><a href="#IPC机制（进程间通信）" class="headerlink" title="IPC机制（进程间通信）"></a>IPC机制（进程间通信）</h2><ol>
+<li><p>开启多进程会给我们带来哪些问题？</p>
+<pre><code>（1）静态成员和单列模式完全失效
+（2）线程同步机制失效
+（3）SharedPreFerences的可靠性下降
+（4）Application会多次创建
+</code></pre></li>
+<li><p>如何开启多进程模式？</p>
+<pre><code>在AndroidMennifest中指定android：process属性就可。
+</code></pre></li>
+<li><p>序列化</p>
+<pre><code>在进程间通信的过程中有序列化的过程，所以参与进程间通信的对象都要进行序列化。
+序列化的方式有两种：
+（1）实现Serializable接口
+（2）实现Parcelable接口
+其中
+  Serializable是Java所提供的一个序列化接口，它是一个空的接口，不需要你做任何操作。
+  Parcelable是Android提供的序列化的接口，效率高（方法说明如下图：）
+</code></pre><p><img src="/2018/04/17/Android-学习/p1.png" alt="Parcelable的方法说明"></p>
+</li>
+</ol>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+    </div>
 
-      <h2 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/16/hello-world/" itemprop="url">
-              
-                <span itemprop="name">我的博客</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-16T21:17:30+08:00"
-              content="2017-03-16" >
-          03-16
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -321,6 +437,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -341,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
@@ -387,6 +516,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC机制（进程间通信）"><span class="nav-number">1.</span> <span class="nav-text">IPC机制（进程间通信）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -403,7 +548,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -499,11 +644,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
